@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "334849612175",
+    "firebase_url": "https://healthnavi-ddeff.firebaseio.com",
+    "project_id": "healthnavi-ddeff",
+    "storage_bucket": "healthnavi-ddeff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334849612175:android:fa11d54c37ad0106",
+        "android_client_info": {
+          "package_name": "com.example.won.healthnavi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334849612175-89odhb0k9ud0scrf3go76n9abl16eggn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhuu-Ergt0lbf1Zu9brjIqM4Ughyn5PtM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
