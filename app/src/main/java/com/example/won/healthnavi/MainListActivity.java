@@ -37,6 +37,14 @@ public class MainListActivity extends AppCompatActivity {
             }
         });
 
+        resBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainListActivity.this, ReservationActivity.class));
+                finish();
+            }
+        });
+
     }
 
     public void logoutStart(){
