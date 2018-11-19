@@ -87,15 +87,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-// 로그인 되어있을때 자동으로 메인화면 가기
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        currentUser = mAuth.getCurrentUser();
-//        if(currentUser != null){
-//            startActivity(new Intent(MainActivity.this, MainListActivity.class));
-//            finish();
-//        }
-//    }
+ //로그인 되어있을때 자동으로 메인화면 가기
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            startActivity(new Intent(MainActivity.this, MainListActivity.class));
+            finish();
+        }
+    }
 }
