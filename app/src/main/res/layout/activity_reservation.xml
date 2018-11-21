@@ -11,12 +11,13 @@
         android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
         android:text="숄더프레스"
         app:layout_constraintEnd_toStartOf="@+id/button8"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintHorizontal_chainStyle="spread"/>
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <Button
         app:layout_constraintHorizontal_weight="1"
@@ -33,33 +34,47 @@
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="40dp"
         android:text="벤치프레스"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="185dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText7" />
 
     <Button
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         android:text="래그익스텐션"
-        tools:layout_editor_absoluteX="221dp"
-        tools:layout_editor_absoluteY="185dp" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintStart_toEndOf="@+id/button9"
+        app:layout_constraintTop_toBottomOf="@+id/editText8" />
 
     <Button
         android:id="@+id/button11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="28dp"
         android:text="체스트프레스"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="324dp" />
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/editText9" />
 
     <Button
         android:id="@+id/button12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
         android:text="랫풀다운"
-        tools:layout_editor_absoluteX="221dp"
-        tools:layout_editor_absoluteY="324dp" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/button11"
+        app:layout_constraintTop_toBottomOf="@+id/editText10" />
 
     <TextView
         android:id="@+id/editText7"
@@ -86,43 +101,57 @@
 
     <TextView
         android:id="@+id/editText9"
-        android:layout_width="22"
-        android:layout_height="44dp2"
+        android:layout_width="22dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="0"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="245dp" />
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/button9" />
 
     <TextView
         android:id="@+id/editText10"
-        android:layout_width="22"
-        android:layout_height="22"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="0"
-        tools:layout_editor_absoluteX="247dp"
-        tools:layout_editor_absoluteY="245dp" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toEndOf="@+id/editText9"
+        app:layout_constraintTop_toBottomOf="@+id/button10" />
 
     <TextView
         android:id="@+id/editText11"
-        android:layout_width="22"
-        android:layout_height="22"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="0"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="401dp" />
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/button11" />
 
     <TextView
         android:id="@+id/editText12"
-        android:layout_width="22"
-        android:layout_height="22"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="0"
-        tools:layout_editor_absoluteX="247dp"
-        tools:layout_editor_absoluteY="401dp" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toEndOf="@+id/editText11"
+        app:layout_constraintTop_toBottomOf="@+id/button12" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"

@@ -1,5 +1,6 @@
 package com.example.won.healthnavi;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,13 +30,16 @@ public class ReservationActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    Button fiBtn = (Button)findViewById(R.id.button7);
                     int val = (int)args[0];
                     if(val == 0)
                     {
+                        fiBtn.setBackgroundColor(Color.RED);
                         Toast.makeText(ReservationActivity.this,"val == 0",Toast.LENGTH_SHORT).show();
                     }
                     else
                     {
+                        fiBtn.setBackgroundColor(Color.GREEN);
                         Toast.makeText(ReservationActivity.this,"val == 1",Toast.LENGTH_SHORT).show();
                     }
                 }
