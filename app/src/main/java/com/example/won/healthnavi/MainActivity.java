@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
                 }else{
 
-
                     currentUser = mAuth.getCurrentUser();
 
                     Toast.makeText(MainActivity.this, "로그인 성공" + "/" + currentUser.getEmail() + "/" + currentUser.getUid() ,Toast.LENGTH_SHORT).show();

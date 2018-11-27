@@ -10,9 +10,18 @@ import android.widget.Toast;
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.net.URISyntaxException;
 
 public class ReservationActivity extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     private Socket socket;
     {
@@ -50,6 +59,8 @@ public class ReservationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
 
         Button FitnessEquipmentBtn1 = (Button)findViewById(R.id.button7);
         Button FitnessEquipmentBtn2 = (Button)findViewById(R.id.button8);
@@ -64,10 +75,17 @@ public class ReservationActivity extends AppCompatActivity {
         FitnessEquipmentBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                socket.emit("checkIn");
+                JSONObject obj = new JSONObject();
+                try{
+                    obj.put("uid",currentUser.getUid());
+                    obj.put("FitnessId", 1);
+                }catch(JSONException e){
+                    e.printStackTrace();
+                }
+
+                socket.emit("reservation", obj );
             }
         });
-
 
     }
 
