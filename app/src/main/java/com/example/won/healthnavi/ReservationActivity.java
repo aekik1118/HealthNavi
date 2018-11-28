@@ -1,5 +1,6 @@
 package com.example.won.healthnavi;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -75,6 +76,8 @@ public class ReservationActivity extends AppCompatActivity {
         FitnessEquipmentBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                mOnPopupClick(view);
                 JSONObject obj = new JSONObject();
                 try{
                     obj.put("uid",currentUser.getUid());
@@ -88,6 +91,26 @@ public class ReservationActivity extends AppCompatActivity {
         });
 
     }
+
+    public void mOnPopupClick(View v){
+        //데이터 담아서 팝업(액티비티) 호출
+        Intent intent = new Intent(this, ReserVationPopupActivity.class);
+        intent.putExtra("data", "Test Popup");
+        startActivityForResult(intent, 1);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode==1){
+            if(resultCode==RESULT_OK){
+                //데이터 받기
+                String result = data.getStringExtra("result");
+            }
+        }
+    }
+
+
+
 
 
 }

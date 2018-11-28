@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.won.healthnavi">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,8 +20,8 @@
         </activity>
         <activity android:name=".SignUpActivity" />
         <activity android:name=".MainListActivity" />
-        <activity android:name=".ReservationActivity"></activity>
+        <activity android:name=".ReservationActivity" />
+        <activity android:name=".ReserVationPopupActivity"  android:theme="@android:style/Theme.Dialog"/>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
