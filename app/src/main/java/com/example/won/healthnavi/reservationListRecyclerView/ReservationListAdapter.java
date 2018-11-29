@@ -20,11 +20,13 @@ public class ReservationListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvPrice;
+        TextView tvReservationTime;
+        TextView tvIsResvationEmpty;
 
         MyViewHolder(View view){
             super(view);
-            tvPrice = view.findViewById(R.id.tv_price);
+            tvReservationTime = view.findViewById(R.id.reservationTimeTxt);
+            tvIsResvationEmpty = view.findViewById(R.id.reservationFlagTxt);
         }
     }
 
@@ -42,7 +44,11 @@ public class ReservationListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyViewHolder myViewHolder = (MyViewHolder) holder;
-        myViewHolder.tvPrice.setText(reservationListInfoArrayList.get(position).price);
+        myViewHolder.tvReservationTime.setText(reservationListInfoArrayList.get(position).reservationTime);
+        if(reservationListInfoArrayList.get(position).isResvationEmpty)
+            myViewHolder.tvIsResvationEmpty.setText("예약 가능");
+        else
+            myViewHolder.tvIsResvationEmpty.setText("예약 불가");
     }
 
     @Override

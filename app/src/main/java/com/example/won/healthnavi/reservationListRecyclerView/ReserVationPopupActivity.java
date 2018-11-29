@@ -20,8 +20,6 @@ import java.util.ArrayList;
 
 public class ReserVationPopupActivity extends Activity {
 
-    TextView txtText;
-
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
 
@@ -38,9 +36,10 @@ public class ReserVationPopupActivity extends Activity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         ArrayList<ReservationListInfo> reservationListInfoArrayList = new ArrayList<>();
-        reservationListInfoArrayList.add(new ReservationListInfo("1000"));
-        reservationListInfoArrayList.add(new ReservationListInfo("2000"));
-        reservationListInfoArrayList.add(new ReservationListInfo("3000"));
+        reservationListInfoArrayList.add(new ReservationListInfo("09:00",true));
+        reservationListInfoArrayList.add(new ReservationListInfo("09:20",true));
+        reservationListInfoArrayList.add(new ReservationListInfo("09:40",true));
+        reservationListInfoArrayList.add(new ReservationListInfo("10:00",true));
 
         ReservationListAdapter reservationListAdapter = new ReservationListAdapter(reservationListInfoArrayList);
         mRecyclerView.setAdapter(reservationListAdapter);
@@ -60,16 +59,6 @@ public class ReserVationPopupActivity extends Activity {
         String data = intent.getStringExtra("data");
 
     }
-
-//    public void mOnClose(View v){
-//        //데이터 전달하기
-//        Intent intent = new Intent();
-//        intent.putExtra("result", "Close Popup");
-//        setResult(RESULT_OK, intent);
-//
-//        //액티비티(팝업) 닫기
-//        finish();
-//    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

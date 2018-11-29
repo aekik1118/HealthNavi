@@ -5,10 +5,11 @@ package com.example.won.healthnavi.reservationListRecyclerView;
  */
 
 public class ReservationListInfo {
-    public int drawableId;
-    public String price;
+    public String reservationTime;
+    public boolean isResvationEmpty;
 
-    public ReservationListInfo(String price){
-        this.price = price;
+    public ReservationListInfo(String reservationTime, boolean isResvationEmpty){
+        this.reservationTime = reservationTime;
+        this.isResvationEmpty = isResvationEmpty;
     }
 }
