@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.won.healthnavi.reservationListRecyclerView.ReserVationPopupActivity;
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
@@ -96,15 +97,5 @@ public class ReservationActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ReserVationPopupActivity.class);
         intent.putExtra("data", "Test Popup");
         startActivityForResult(intent, 1);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode==1){
-            if(resultCode==RESULT_OK){
-                //데이터 받기
-                String result = data.getStringExtra("result");
-            }
-        }
     }
 }
