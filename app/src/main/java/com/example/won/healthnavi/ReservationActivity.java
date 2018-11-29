@@ -85,7 +85,6 @@ public class ReservationActivity extends AppCompatActivity {
                 }catch(JSONException e){
                     e.printStackTrace();
                 }
-
                 socket.emit("reservation", obj );
             }
         });
@@ -108,9 +107,4 @@ public class ReservationActivity extends AppCompatActivity {
             }
         }
     }
-
-
-
-
-
 }
