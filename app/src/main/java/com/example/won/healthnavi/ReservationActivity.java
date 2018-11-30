@@ -95,7 +95,7 @@ public class ReservationActivity extends AppCompatActivity {
     public void mOnPopupClick(View v){
         //데이터 담아서 팝업(액티비티) 호출
         Intent intent = new Intent(this, ReservationChoiceTimeActivity.class);
-        intent.putExtra("data", "Test Popup");
+        intent.putExtra("data", "TestRes");
         startActivityForResult(intent, 1);
     }
 
