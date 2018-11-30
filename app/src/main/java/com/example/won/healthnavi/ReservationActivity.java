@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.won.healthnavi.reservationListRecyclerView.ReserVationPopupActivity;
+import com.example.won.healthnavi.reservationListRecyclerView.ReservationChoiceTimeActivity;
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
@@ -94,7 +94,7 @@ public class ReservationActivity extends AppCompatActivity {
 
     public void mOnPopupClick(View v){
         //데이터 담아서 팝업(액티비티) 호출
-        Intent intent = new Intent(this, ReserVationPopupActivity.class);
+        Intent intent = new Intent(this, ReservationChoiceTimeActivity.class);
         intent.putExtra("data", "Test Popup");
         startActivityForResult(intent, 1);
     }

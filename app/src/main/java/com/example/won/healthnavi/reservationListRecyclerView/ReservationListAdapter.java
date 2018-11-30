@@ -40,12 +40,6 @@ public class ReservationListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         }
         @Override
         public void onClick(View v) {
-            if (v.getId() == btReservationSubmit.getId()) {
-                Toast.makeText(v.getContext(), "ITEM PRESSED = ", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(v.getContext(), "ROW PRESSED = " , Toast.LENGTH_SHORT).show();
-            }
-
             listenerRef.get().onPositionClicked(getAdapterPosition());
         }
 
