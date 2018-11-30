@@ -98,4 +98,10 @@ public class ReservationActivity extends AppCompatActivity {
         intent.putExtra("data", "Test Popup");
         startActivityForResult(intent, 1);
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        return;
+    }
 }

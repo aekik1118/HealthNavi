@@ -3,6 +3,7 @@ package com.example.won.healthnavi.reservationListRecyclerView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.won.healthnavi.R;
 import com.example.won.healthnavi.reservationListRecyclerView.ReservationListAdapter;
@@ -18,7 +20,7 @@ import com.example.won.healthnavi.reservationListRecyclerView.ReservationListInf
 
 import java.util.ArrayList;
 
-public class ReserVationPopupActivity extends Activity {
+public class ReserVationPopupActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
@@ -40,19 +42,20 @@ public class ReserVationPopupActivity extends Activity {
         reservationListInfoArrayList.add(new ReservationListInfo("09:20",true));
         reservationListInfoArrayList.add(new ReservationListInfo("09:40",true));
         reservationListInfoArrayList.add(new ReservationListInfo("10:00",true));
+        reservationListInfoArrayList.add(new ReservationListInfo("10:20",true));
+        reservationListInfoArrayList.add(new ReservationListInfo("10:40",true));
+        reservationListInfoArrayList.add(new ReservationListInfo("11:00",true));
+        reservationListInfoArrayList.add(new ReservationListInfo("11:20",true));
+        reservationListInfoArrayList.add(new ReservationListInfo("11:40",true));
+        reservationListInfoArrayList.add(new ReservationListInfo("12:00",true));
 
-        ReservationListAdapter reservationListAdapter = new ReservationListAdapter(reservationListInfoArrayList);
-        mRecyclerView.setAdapter(reservationListAdapter);
-
-        Button closeBtn = (Button)findViewById(R.id.button13);
-        Button checkBtn = (Button)findViewById(R.id.button14);
-
-        closeBtn.setOnClickListener(new View.OnClickListener() {
+        ReservationListAdapter reservationListAdapter = new ReservationListAdapter(reservationListInfoArrayList, new ClickListener() {
             @Override
-            public void onClick(View view) {
-                finish();
+            public void onPositionClicked(int position) {
+                Toast.makeText(ReserVationPopupActivity.this, "click" + position, Toast.LENGTH_SHORT).show();
             }
         });
+        mRecyclerView.setAdapter(reservationListAdapter);
 
         //데이터 가져오기
         Intent intent = getIntent();

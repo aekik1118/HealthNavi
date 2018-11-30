@@ -21,7 +21,7 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".MainListActivity" />
         <activity android:name=".ReservationActivity" />
-        <activity android:name=".reservationListRecyclerView.ReserVationPopupActivity"  android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".reservationListRecyclerView.ReserVationPopupActivity"/>
     </application>
 
 </manifest>
