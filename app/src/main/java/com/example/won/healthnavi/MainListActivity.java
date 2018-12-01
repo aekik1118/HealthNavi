@@ -22,7 +22,7 @@ public class MainListActivity extends AppCompatActivity {
 
         currentUser = mAuth.getCurrentUser();
         if(currentUser == null){
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
             finish();
         }
 
@@ -41,7 +41,6 @@ public class MainListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainListActivity.this, ReservationActivity.class));
-                finish();
             }
         });
 
@@ -49,7 +48,7 @@ public class MainListActivity extends AppCompatActivity {
 
     public void logoutStart(){
         mAuth.signOut();
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, LoginActivity.class));
         finish();
     }
 }

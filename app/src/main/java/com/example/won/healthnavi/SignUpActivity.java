@@ -72,7 +72,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                             currentUser = mAuth.getCurrentUser();
                             Toast.makeText(SignUpActivity.this, "가입 성공" + name + " ", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(SignUpActivity.this,MainActivity.class));
+                            startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
                             finish();
 
                         }

@@ -74,6 +74,7 @@ public class ReservationActivity extends AppCompatActivity {
         socket.on("checkOn",onNew);
         socket.connect();
 
+
         FitnessEquipmentBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,6 +98,12 @@ public class ReservationActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ReservationChoiceTimeActivity.class);
         intent.putExtra("data", "TestRes");
         startActivityForResult(intent, 1);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        socket.emit("onResume");
     }
 
     @Override

@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
@@ -59,27 +59,27 @@ public class MainActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                Toast.makeText(MainActivity.this,"mAuth. onComplete 함수" ,Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,"mAuth. onComplete 함수" ,Toast.LENGTH_SHORT).show();
                 if (!task.isSuccessful()) {
                     try {
                         throw task.getException();
                     } catch (FirebaseAuthInvalidUserException e) {
-                        Toast.makeText(MainActivity.this,"존재하지 않는 id 입니다." ,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this,"존재하지 않는 id 입니다." ,Toast.LENGTH_SHORT).show();
                     } catch (FirebaseAuthInvalidCredentialsException e) {
-                        Toast.makeText(MainActivity.this,"이메일 형식이 맞지 않습니다." ,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this,"이메일 형식이 맞지 않습니다." ,Toast.LENGTH_SHORT).show();
                     } catch (FirebaseNetworkException e) {
-                        Toast.makeText(MainActivity.this,"Firebase NetworkException" ,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this,"Firebase NetworkException" ,Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
-                        Toast.makeText(MainActivity.this,"Exception" ,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this,"Exception" ,Toast.LENGTH_SHORT).show();
                     }
 
                 }else{
 
                     currentUser = mAuth.getCurrentUser();
 
-                    Toast.makeText(MainActivity.this, "로그인 성공" + "/" + currentUser.getEmail() + "/" + currentUser.getUid() ,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "로그인 성공" + "/" + currentUser.getEmail() + "/" + currentUser.getUid() ,Toast.LENGTH_SHORT).show();
 
-                    startActivity(new Intent(MainActivity.this, MainListActivity.class));
+                    startActivity(new Intent(LoginActivity.this, MainListActivity.class));
                     finish();
                 }
 
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            startActivity(new Intent(MainActivity.this, MainListActivity.class));
+            startActivity(new Intent(LoginActivity.this, MainListActivity.class));
             finish();
         }
     }
